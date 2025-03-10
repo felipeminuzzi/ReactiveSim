@@ -1,0 +1,96 @@
+OPTIONS...................(FORMAT  7(A4,6X), END WITH -END -)           
+REGRID  2/PCON     /PROFIL  1/TSO      /IMPULS -2/
+STORE   1/EXTRA   2/OUTPUT  3/FUSO    4/TECPLO  5/Plot    2/         /
+InnerB   /T_in    1/T_out   1/w_in    1/w_out   1/v_in    1/J_out   1/
+END      /         /         /         /         /         /         /
+****
+Gas Phase Species.........(FORMAT 14(A4,1X), END WITH -END -)
+N2      ,CO2     ,H2O     ,O2      ,H       ,O       ,OH      ,
+H2O2    ,C       ,CH      ,CH2     ,CH2(S)  ,CH3     ,CH4     ,
+CO      ,HCO     ,CH2O    ,CH2OH   ,CH3O    ,CH3OH   ,HO2     ,
+C2H     ,C2H2    ,C2H3    ,C2H4    ,C2H5    ,C2H6    ,HCCO    ,
+CH2CO   ,HCCOH   ,AR      ,H2      ,C3H7    ,C3H8    ,CH2CHO  ,
+CH3CHO
+END
+************************************************************************
+*                                                                      *
+*                                                                      *
+*   Conditions for a one-dimensional flame                             *
+*                                                                      *
+*                                                                      *
+************************************************************************
+Left boundary
+N2      : 0.5975
+O2      : 0.1575
+CH4     : 0.25
+T       : 298.0E+00
+P       : 1.00E+00
+v       : 28.7
+END                                                                    
+Right boundary
+O2      : 21.00
+N2      : 79.00
+T       : 292.0E+00
+P       : 1.00E+00
+PHI     : -1.28E+05
+END
+* a=650, v=53.3, PHI=-4.43E+05
+* a=647, PHI=4.40e5
+* a=645, PHI=4.37e5
+* a=640, PHI=4.30e5
+* a=635, PHI=4.23e5
+* a=630,PHI=4.16e5
+* a=625, PHI=4.10e5
+* a=600, v=49.2, PHI=-3.78E+05
+* a=575, PHI=3.47e5
+* a=550, v=45.1, PHI=-3.18E+05
+* a=525, PHI=2.89e5
+* a=500, v=40.98, PHI=-2.62E+05
+* a=475, PHI=2.37e5
+* a=450, v=36.9, PHI=2.13E+05
+* a=425, PHI=1.89e5
+* a=400, v=32.8, PHI=-1.68E+05
+* a=375, PHI=1.47e5
+* a=350, v=28.7, PHI=-1.28E+05
+* a=325, PHI=1.11e5
+* a=300, v=24.59, PHI=-9.45E+04
+* a=275, PHI=-7.94e4
+* a=250, v=20.49, PHI=-6.56E+04
+* a=80, v=6.55, PHI=-6.72E+03
+* a=100, v=8.19, PHI=-1.01E+04
+* a=125, PHI=-1.64e4
+* a=150, v=12.3, PHI=-2.37E+04
+* a=175, PHI=-3.21E+04
+* a=200, v=16.4, PHI=-4.20E+04
+* a=225, PHI=-5.21e4
+Conditions................(FORMAT A4,1X,E10, END WITH -END -)           
+****            OUTPUT PARAMETERS                                       
+Te  =  1.00E+03    ........... END TIME OF INTEGRATION (S)
+Nt  =    5.E 00    ........... NUMBER OF TIME STEPS
+Nmax=    5.E 00    ........... MAX. NO OF RETURNS TO NEXT OUTPUT
+****            COORDINATE SYSTEM
+NG  =  81. E 00    ........... NUMBER OF GRID POINTS
+RI  = 0.0  E 00    ........... INNER BOUNDARY (M)
+RO  = 8.0  E-02    ........... OUTER BOUNDARY (M)
+GE  = 0.0  E 00    ........... GEOMETRY                                 
+****            SOURCE PARAMETERS                                       
+SE  = 0.000E+03............... SOURCE ENERGY,  1.33-134   (J,M)         
+SW  = 5.000E-03............... SOURCE WIDTH,             M              
+ST  = 5.000E-05............... SOURCE TIME,              S              
+****            GRIDPOINT CONTROL                                       
+WFT =  1.0 E 00............... WEIGHT OF DT/DPSI                        
+WFP =  1.0 E 00...............   "    "  DP/DPSI                        
+WFU =  1.0 E 00...............   "    "  DU/DPSI                        
+WFR =  1.0 E 00...............   "    "  DR/DPSI                        
+****
+AMPL= 1700.E 00    ........... Ampiltude of overlaid profile            
+SIGM=  1.00E-02    ........... half width of overlaid profile
+RMAX=  4.50E-02    ........... location of maximum of overl. profile
+****            INTEGRATION CONTROL                                     
+RTOL= 1.0  E-03............... RELATIVE ERROR TOLERANCE
+ATOL= 1.0  E-10............... ABSOLUTE ERROR TOLERANCE
+STEP=  1.  E-08............... INITIAL STEPSIZE
+RS  =  1.  E-08............... STEPSIZE AFTER REGRIDDING
+****            MISCELLANOUS                                            
+ART = -3.0 E 00............... ARTIFICIAL VISCOSITY FACTOR              
+END                                                                     

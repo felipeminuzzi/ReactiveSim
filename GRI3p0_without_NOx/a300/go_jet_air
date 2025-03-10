@@ -1,0 +1,20 @@
+#!/bin/bash
+#
+inpdir=../0_input
+insdir=../../../0_src_insfla/insfla/bin-ifort
+#
+cp $inpdir/Moldat_CH4 ./MOLNEW
+cp $inpdir/Thermo_CH4 ./THERMO
+cp $inpdir/Mec_CH4 ./MEC
+
+# #
+cp $inpdir/Inp-Counter_CH4_GRI_3p0_a300 ./INP
+#
+$insdir/insinp
+#
+cat fort.3 inipro > temp
+mv temp fort.3
+#
+$insdir/insrun
+#
+cp fort.29 f29_a300

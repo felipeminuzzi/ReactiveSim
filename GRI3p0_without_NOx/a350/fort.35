@@ -1,0 +1,4 @@
+TITLE= "Output of INSFLA - max values of chosen species"
+VARIABLES ="TIME (S)"
+"  r(m)    T(K)  ","  T(K)  "
+ZONE
