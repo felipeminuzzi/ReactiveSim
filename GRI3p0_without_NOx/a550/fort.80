@@ -1,0 +1,10 @@
+TITLE= "Output from INSFLA - mass fractions"
+VARIABLES =
+"     TIME","   r(m)  ","   J     ","    G    ","  v(m/s) ","   T(K)  ","   p(Pa) ",
+" N2      "," CO2     "," H2O     "," O2      "," H       "," O       "," OH      ",
+" H2O2    "," C       "," CH      "," CH2     "," CH2(S)  "," CH3     "," CH4     ",
+" CO      "," HCO     "," CH2O    "," CH2OH   "," CH3O    "," CH3OH   "," HO2     ",
+" C2H     "," C2H2    "," C2H3    "," C2H4    "," C2H5    "," C2H6    "," HCCO    ",
+" CH2CO   "," HCCOH   "," AR      "," H2      "," C3H7    "," C3H8    "," CH2CHO  ",
+" CH3CHO  "
+ZONE I=   1, J=   1, F=POINT
