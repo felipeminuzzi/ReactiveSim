@@ -8,6 +8,8 @@ raw_file = sys.argv[1]
 f = open(raw_file, 'r')
 content = f.readlines()
 
+namefile = raw_file.split('/')[-1][-4:]
+
 n = int(content[2][18:21])
 
 if not n%3 == 0:
@@ -63,17 +65,22 @@ for _ in range(41):
     r = get_data(x_data)
     df[name] = r
 
-inp_var = input('Type a list with variables to plot: ')
-var     = inp_var.split()
+df.rename(columns={'r(' : 'r(mm)', 'T(' : 'T(K)', 'p(' : 'p', 'v(m' : 'v(m/s)' }, inplace=True)
+
+#inp_var = input('Type a list with variables to plot: ')
+var     = ['T(K)','CO2','H2O','O2','CH4','O2','C2H4','C','C2H2']#inp_var.split()
+df.to_csv(raw_file[:-8] + f'results_{namefile}.csv')
 
 plt.figure(1)
+plt.xlabel('r(mm)')
 for i in range(len(var)):
 
-    plt.subplot(2,2,i+1)
-    plt.plot(df['r('], df[var[i]], '-', label=var[i])
+    plt.subplot(3,3,i+1)
+    plt.plot(df['r(mm)'], df[var[i]], '-', label=var[i])
     plt.ylabel(var[i])
-    plt.xlabel('r(cm)')
+    plt.xlim(0.03, 0.05)
     plt.legend()
+
 plt.show()
 
 
